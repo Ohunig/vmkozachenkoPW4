@@ -17,7 +17,8 @@ enum WishEventCreationAssembly {
         let interactor = WishEventCreationInteractor(
             presenter: presenter,
             colorManager: ColorManager.shared,
-            eventRepository: WishEventRepository.shared
+            eventRepository: WishEventRepository.shared,
+            calendarManager: CalendarManager()
         )
         let viewController = WishEventCreationViewController(
             interactor: interactor

@@ -9,4 +9,5 @@ import Foundation
 
 protocol CalendarManaging: AnyObject {
     
+    func create(eventModel: CalendarEventModel)
 }
