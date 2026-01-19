@@ -13,4 +13,6 @@ protocol WishCalendarBusinessLogic: AnyObject {
     func loadStart()
     
     func loadGoToMainScreen()
+    
+    func loadGoToAddEvent()
 }

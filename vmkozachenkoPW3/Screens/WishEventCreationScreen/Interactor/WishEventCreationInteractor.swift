@@ -13,14 +13,18 @@ final class WishEventCreationInteractor: WishEventCreationBusinessLogic {
     
     private let colorManager: ColorManagerLogic
     
+    private let eventRepository: WishEventStoringLogic
+    
     // MARK: Lifecycle
     
     init(
         presenter: WishEventCreationPresentationLogic,
-        colorManager: ColorManagerLogic
+        colorManager: ColorManagerLogic,
+        eventRepository: WishEventStoringLogic
     ) {
         self.presenter = presenter
         self.colorManager = colorManager
+        self.eventRepository = eventRepository
     }
     
     func start() {
@@ -32,7 +36,13 @@ final class WishEventCreationInteractor: WishEventCreationBusinessLogic {
     }
     
     func loadAddEvent(_ request: Model.CreateEvent.Request) {
-        <#code#>
+        eventRepository.addEvent(
+            title: request.title,
+            description: request.description,
+            start: request.start,
+            end: request.end
+        )
+        presenter.changeToWishCalendarScreen()
     }
     
 }

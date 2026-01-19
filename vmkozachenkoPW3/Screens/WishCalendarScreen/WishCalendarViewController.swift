@@ -90,7 +90,7 @@ final class WishCalendarViewController: UIViewController {
         
         newButton = CustomBarButton(type: .system)
         newButton.title = Constants.newButtonText
-        newButton.tapped = backButtonTapped
+        newButton.tapped = newButtonTapped
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             customView: newButton
         )
@@ -143,11 +143,16 @@ final class WishCalendarViewController: UIViewController {
         newButton.setTitleColor(color, for: .normal)
     }
     
-    // MARK: Back button tapped
+    // MARK: Events
     
     @objc
     private func backButtonTapped() {
         interactor.loadGoToMainScreen()
+    }
+    
+    @objc
+    private func newButtonTapped() {
+        interactor.loadGoToAddEvent()
     }
 }
 
@@ -197,4 +202,11 @@ extension WishCalendarViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Event creation delegate ext
 
+extension WishCalendarViewController: WishEventCreationDelegate {
+    
+    func wishEventCreated() {
+        wishEventCollection.reloadData()
+    }
+}

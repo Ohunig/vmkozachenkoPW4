@@ -35,6 +35,10 @@ final class WishCalendarInteractor: WishCalendarBusinessLogic {
     func loadGoToMainScreen() {
         presenter.goToMainScreen()
     }
+    
+    func loadGoToAddEvent() {
+        presenter.goToAddEvent()
+    }
 }
 
 extension WishCalendarInteractor: WishCalendarDataSource {

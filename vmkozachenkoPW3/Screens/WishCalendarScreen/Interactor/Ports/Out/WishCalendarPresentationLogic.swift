@@ -13,4 +13,6 @@ protocol WishCalendarPresentationLogic: AnyObject {
     func presentStart(_ response: Model.Start.Response)
     
     func goToMainScreen()
+    
+    func goToAddEvent()
 }

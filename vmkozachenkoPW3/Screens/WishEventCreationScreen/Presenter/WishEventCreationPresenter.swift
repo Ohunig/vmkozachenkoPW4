@@ -24,6 +24,6 @@ final class WishEventCreationPresenter: WishEventCreationPresentationLogic {
     }
     
     func changeToWishCalendarScreen() {
-        <#code#>
+        view?.dismiss(animated: true)
     }
 }

@@ -28,4 +28,11 @@ final class WishCalendarPresenter: WishCalendarPresentationLogic {
     func goToMainScreen() {
         view?.navigationController?.popViewController(animated: true)
     }
+    
+    func goToAddEvent() {
+        let addEventScreen = WishEventCreationAssembly.build(
+            eventCreationDelegate: view
+        )
+        view?.present(addEventScreen, animated: true)
+    }
 }
